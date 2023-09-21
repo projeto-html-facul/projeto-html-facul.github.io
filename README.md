@@ -3,6 +3,10 @@
 ### Nós somos alunos da Unimetrocamp Wyden Campinas, e este é o nosso projeto!
 ### Um de nossos integrantes tem uma loja virtual, e é utilizando dela que estaremos desenvolvendo nosso projeto.
 
+#### Caio Henrique de Andrade Farias  RA: 202302640321
+#### Vanessa Mendes Vieira da Silva  RA: 202303046261
+#### Daniel Dante Firmino Macedo RA: 202303066945
+
 <p>
 
 <div align="center">
