@@ -1,6 +1,5 @@
 *{
 margin:  0;
-padding: 0;
 box-sizing: border-box;
 scroll-behavior:smooth;
 font-family: 'Inter', sans-serif;
@@ -36,6 +35,7 @@ color: #c3c3c3;
 }
 
 .logo-name{
+    gap: 1rem;
     display: flex;
     align-items: center;
 }
@@ -74,7 +74,6 @@ color: #c3c3c3;
     font-size: 25px;
     font-weight: 400;
     transition: all .42s ease;
-
 }
 
 .nav-icons i:hover{
@@ -182,14 +181,13 @@ section{
 .slider{
     margin-top: 0.5vh ;
     height: 69.2828146143437vh;
-    width: 84.3125vw;
-    border-radius:0.6765899864682002vh ;
+    width: 81.3125vw;
+    border-radius: 8px ;
     overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 .navigation{
@@ -209,10 +207,12 @@ section{
     cursor: pointer;
     transition: .4s;
 }
+
 .bar:hover{
     background-color: #fff;
 }
-input{
+
+.slider-radio{
     display: none;
 }
 
@@ -233,7 +233,7 @@ input{
 }
 
 #slide1:checked ~ .s1{
-    margin-left: 0;
+    margin-left: px;
 }
 
 #slide2:checked ~ .s1{
@@ -318,20 +318,257 @@ input{
     grid-template-columns: repeat(auto-fit, minmax(25vh, auto));
     gap: 2rem;
 }
+
 .produto-aba2{
     margin-top: -8vw;
 }
 
 /* PRODUTO 1 */
-.produto1-sec{
-    height: auto;
-    width: 60vw;
-    margin-top: -10vh;
+
+.flex-box{
+    display: flex;
+    width: 1000px;
+    margin: 12% auto;
 }
- 
+
+.left{
+    width: 50%;
+}
+
+.big-img{
+    width: 300px;
+}
+
+.big-img img{
+    width: inherit;
+}
+
+.imagess{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+.small-img{
+    width: 64px;
+    overflow: hidden;
+}
+
+.small-img img{
+    width: inherit;
+    width: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.small-img:hover img{
+    transform:scale(1.1);
+}
+
+.right{
+    margin-top: 4%;
+}
+
+.name-prod{
+    color: #fff;
+    font-weight: 400;
+    margin-left: 7% ;
+}
+
+.price-prod{
+    font-size: 20px;
+    margin-top: 5%;
+}
+
+.tamanhos{
+    margin-top: 6%;
+}
+
+.tamanhos select{
+    margin-right: 5px ;
+    padding: 1%;
+    border-radius: 3px;
+    background-color: rgb(85, 85, 85);
+    color: white;
+    cursor: pointer;
+}
+
+.comprarr{
+    margin-top: 6%;
+}
+.comprarr a{
+    background-color: #09af4e;
+    color: rgb(0, 0, 0);
+    border-radius: 3px;
+    padding: 1%;
+    font-weight: 500;
+    transition: all .42s ease;
+}
+
+.comprarr:hover a{
+    background-color: #1eda6c;
+    transform: scale(1.1);
+}
+
+.text-product{
+    margin-top: 5%;
+}
+
 /* CONTATOS */
 
 .contacts img{
     margin-left: 4.5vw;
     max-width: 50vw;
+}
+
+.container-contact{
+    margin:0 auto;
+    margin-top: 10%;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    font-weight: 400;
+}
+#contact{
+    color: #ffffff;
+    background-color: #555;
+    padding: 5%;
+}
+.container-contact form{
+    margin: 0 auto;
+    width: 317px;
+    height: 530px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1.5px solid #fff;
+}
+
+.logo-contact{
+    margin-left: 28.5%;
+    margin-bottom: 1%;
+    max-width: 120px;
+    width: 100%
+}
+
+.container-contact button{
+    background-color: #323232;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 6px;
+    font-size: 13px;
+}
+
+#contact h5{
+ font-weight: 500;
+ margin-bottom: 1%;
+}
+
+#contact input{
+    width: 258.477px;
+    height: 37.591px;
+    flex-shrink: 0;
+    border: 1.5px solid #fff;
+    border-radius: 10px;
+    background-color: #414141;
+    color: #848484;
+    padding: 10px;
+}
+
+#contact fieldset{
+    border: none;
+}
+
+#contact textarea{
+    padding: 10px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: #414141;
+    width: 258.477px;
+    height: 70px;
+    resize: none;
+}
+
+.container-contact a{
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* REGISTRO */
+
+.container-registro{
+    margin:0 auto;
+    margin-top: 10%;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    font-weight: 400;;
+}
+
+.container-registro form{
+    margin: 0 auto;
+    width: 317px;
+    height: 495px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1.5px solid #fff;
+}
+
+.container-registro button{
+    background-color: #323232;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 6px;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+.fazer-login {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* LOGIN */
+
+.container-login{
+    margin:0 auto;
+    margin-top: 10%;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    font-weight: 400;;
+}
+
+.container-login form{
+    margin: 0 auto;
+    width: 317px;
+    height: 360px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1.5px solid #fff;
+}
+
+.container-login button{
+    background-color: #323232;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 6px;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+.container-login a{
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
 }
