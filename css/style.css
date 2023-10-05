@@ -81,6 +81,35 @@ color: #c3c3c3;
     color: #ffffff;
 }
 
+#search-box2{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#search-box {
+    display: flex;
+    align-items: center;
+}
+
+#search-box i {
+    cursor: pointer;
+}
+
+#search-box input{
+    font-weight: 400;
+    color: #cfcfcf;
+    margin-right: 10px;
+    background-color: #414141;
+    height: 3.7vh;
+}
+
+#search-box ::placeholder{
+    color: #848484 ;
+    padding-left: 35%;
+}
+
+
+
 #menu-icon{
     font-size: 35px;
     color: #c3c3c3;
@@ -571,4 +600,44 @@ section{
     color: #fff;
     font-size: 10px;
     font-weight: 400;
+}
+
+/* CARRINHO */
+
+.cart{
+    padding: 8%;
+}
+
+.carrinho-pt1{
+
+    padding-left: 4%;
+    font-size: 20px;
+    font-weight: 200;
+    margin: 2% 43%;
+    color: #ffffff;
+
+}
+
+.carrinho{
+    height: 65vh;
+    max-width: 65vw;
+    margin: auto;
+    border: 1.5px solid black;
+    background-color: #8d8d8d;
+    border-radius:10px;
+}
+.prod1-cart{
+    background-color: #cfcfcf;
+    border-radius: 10px;
+    margin: 3% auto;
+    max-width: 60vw;
+    height: 14vh;
+    border: 0.5px solid rgb(48, 48, 48);
+}
+.finalizar button{
+    margin-top: 15%;
+    font-size: 15px;
+    margin-left: 90%;
+    height: 5%;
+    width: 7%;
 }
