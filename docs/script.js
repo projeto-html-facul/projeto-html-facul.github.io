@@ -27,6 +27,8 @@ const catalogo = [{
     img: "./images/Tenis/Nike Shox TL Black/Nike Shox TL Black (2).jpg"
 },]
 
+// Pagina de produtos
+
 function products(){
     for(let i = 0; i < catalogo.length; i ++){
         let prod = catalogo[i]
@@ -48,6 +50,8 @@ function products(){
     }
 }
 
+// Destaques Index
+
 function prodIndex(){
     for(let i = 0; i < 4; i++){
         let prod = catalogo[i]
@@ -67,6 +71,20 @@ function prodIndex(){
     </div>`
 
     indexProd.innerHTML += cardProd;
-    
     }
 }
+
+// seleção de tamanhos
+
+function mostrarSelecao() {
+    const tamanhoSelecionado = document.getElementById('tamanho').value;
+    alert('Você selecionou o tamanho ' + tamanhoSelecionado);
+  }
+
+// seleção de imagens principais
+
+  function showImg (pic){
+    let bigImg = document.querySelector('.big-img img');
+    bigImg.src = pic;
+  }
+  
