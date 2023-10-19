@@ -658,13 +658,16 @@ section{
     padding: 20px;
     width: 100%;
 }
+.content p{
+    padding-bottom: 1%;
+}
 
 .content h3{
     margin-bottom: 23px;
 }
 
 .content h4{
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
 
 .unit input{
@@ -675,6 +678,21 @@ section{
 
 .btn_area i{
     margin-right: 5px;
+}
+
+#remove_cart{
+    padding: 0.7%;
+    margin-bottom: 1%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(189, 50, 50);
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#remove_cart:hover{
+    background-color: #9e0808;
 }
 
 #right_bar{
@@ -710,8 +728,22 @@ section{
 #right_bar i{
     margin-right: 15px;
 }
-.cart_total :hover a{
-    background-color: #25a395;
+
+.btn_area{
+    font-size: 17px;
+    border: none;
+    background-color: #4c4c4c;
+    padding-left: 5px;
+    border-radius: 5px;
+    padding: 12px;
+    margin-left: 10%;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.btn_area:hover {
+    background-color: #165a00;
 }
 
 @media screen and (max-width: 700px) {

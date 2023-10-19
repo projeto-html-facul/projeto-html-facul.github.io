@@ -64,7 +64,6 @@ const catalogo = [{
     img3: "./images/Tenis/Tn' 1 White and Black/Tn'1 White and Black (2).jpg",
     img4: "./images/Tenis/Tn' 1 White and Black/Tn'1 White and Black (3).jpg",
     stock: 34
-
 }
 
 ]
@@ -103,7 +102,12 @@ function productCart(){
         <div class="content">
             <h3>${prod.nomeProd}</h3>
             <h4>R$${prod.precoProd.toFixed(2).replace('.', ',')}</h4>
-            <p class="unit">Quantidade: <input value="0"></p>
+            <div class= "plusplus"> 
+                <button onclick="aumentar()">+</button>
+                <button onclick="diminuir()">-</button>
+                <p class="unit">Quantidade: <input type= "number" value="1"></p>
+                <button id="remove_cart">Remover</button>
+            </div>
             <p class="btn-area">
                 <i class="stock"></i>
                 <span class="btn2">Disponíveis: ${prod.stock} </span>
@@ -132,7 +136,7 @@ function totalCart(){
             <p><span>Descontos:</span> <span>R$0,00</span></p>
             <hr>
             <p><span>Total:</span><span>R$${total.toFixed(2).replace('.', ',')}</span></p>
-            <a href="#"><i class="btn_area"></i>Finalizar Compra</a>
+            <button class="btn_area">Finalizar Compra</button>
         </div>`;
 
     right_bar.innerHTML += cart_total;
@@ -160,6 +164,10 @@ function prodIndex(){
     indexProd.innerHTML += cardProd;
     }
 }
+
+//remove carrinho
+
+
 
 // seleção de tamanhos
 
