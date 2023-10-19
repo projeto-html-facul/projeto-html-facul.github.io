@@ -103,9 +103,7 @@ function productCart(){
             <h3>${prod.nomeProd}</h3>
             <h4>R$${prod.precoProd.toFixed(2).replace('.', ',')}</h4>
             <div class= "plusplus"> 
-                <button onclick="aumentar()">+</button>
-                <button onclick="diminuir()">-</button>
-                <p class="unit">Quantidade: <input type= "number" value="1"></p>
+                <p class="unit">Quantidade: <input type= "number" min="1" max="${prod.stock}" value="1"></p>
                 <button id="remove_cart">Remover</button>
             </div>
             <p class="btn-area">
