@@ -7,7 +7,9 @@ const catalogo = [{
     img2: "./images/Tenis/Tn' 1 Black and white/TN1 BLACK AND WHITE (2).jpg",
     img3: "./images/Tenis/Tn' 1 Black and white/TN1 BLACK AND WHITE (3).jpg",
     img4: "./images/Tenis/Tn' 1 Black and white/TN1 BLACK AND WHITE (4).jpg",
-    stock: 342
+    stock: 342,
+    filter: "Air max plus Tn",
+    home: true
 },
 {
     id: 2,
@@ -18,7 +20,9 @@ const catalogo = [{
     img2: "./images/Tenis/Tn' 1 Chargers/TN Chargers (5).jpg",
     img3: "./images/Tenis/Tn' 1 Chargers/TN Chargers (4).jpg",
     img4: "./images/Tenis/Tn' 1 Chargers/TN Chargers (3).jpg",
-    stock: 431
+    stock: 431,
+    filter: "Air max plus Tn",
+    home: false
 },
 {
     id: 3,
@@ -29,7 +33,9 @@ const catalogo = [{
     img2: "./images/Tenis/Air max 95 Neon/Air max 95 Neon (1).jpg",
     img3: "./images/Tenis/Air max 95 Neon/Air max 95 Neon (2).jpg",
     img4: "./images/Tenis/Air max 95 Neon/Air max 95 Neon (3).jpg",
-    stock: 222
+    stock: 222,
+    filter: "Air max 95",
+    home: true
 },
 {
     id: 4,
@@ -40,7 +46,9 @@ const catalogo = [{
     img2: "./images/Tenis/Nike Shox TL Black/Nike Shox TL Black (2).jpg",
     img3: "./images/Tenis/Nike Shox TL Black/Nike Shox TL Black (1).jpg",
     img4: "./images/Tenis/Nike Shox TL Black/Nike Shox TL Black (3).jpg",
-    stock: 98
+    stock: 98,
+    filter: "Nike Shox",
+    home: true
 },
 {
     id: 5,
@@ -51,8 +59,9 @@ const catalogo = [{
     img2: "./images/Tenis/Air force 1 '07/Air force 1 07 (3).jpg",
     img3: "./images/Tenis/Air force 1 '07/Air force 1 07 (2).jpg",
     img4: "./images/Tenis/Air force 1 '07/Air force 1 07 (1).jpg",
-    stock: 984
-
+    stock: 984,
+    filter: "Air Force",
+    home: false
 },
 {
     id: 6,
@@ -63,31 +72,49 @@ const catalogo = [{
     img2: "./images/Tenis/Tn' 1 White and Black/Tn'1 White and Black (1).jpg",
     img3: "./images/Tenis/Tn' 1 White and Black/Tn'1 White and Black (2).jpg",
     img4: "./images/Tenis/Tn' 1 White and Black/Tn'1 White and Black (3).jpg",
-    stock: 34
+    stock: 34,
+    filter: "Air max plus Tn",
+    home: true
 }
-
 ]
 
 // Pagina de produtos
 
-function products(){
+function productsIndex(){
     for(let i = 0; i < catalogo.length; i ++){
         let prod = catalogo[i]
-
+        if(prod.home == true){
+            let cardProd = `
+            <div class="row">
+            <a href="produto${i+1}.html"><img src="${prod.img}"></a>
+            <div class="product-text">
+                <h5>New</h5>
+            </div>
+            <div class="preco">
+                <h4>${prod.nomeProd}</h4>
+                <p>R$${prod.precoProd.toFixed(2).replace('.', ',')}</p>
+            </div>
+            </div>`
+            indexProd.innerHTML += cardProd;
+        }
+    }
+}
+function productsPage(){
+    for(let d = 0; d < catalogo.length; d++){
+        let prod = catalogo[d]
         let cardProd = `
-        <div class="row">
-        <a href="produto${i+1}.html"><img src="${prod.img}"></a>
-        <div class="product-text">
-            <h5>New</h5>
-        </div>
-        <div class="preco">
-            <h4>${prod.nomeProd}</h4>
-            <p>R$${prod.precoProd.toFixed(2).replace('.', ',')}</p>
-        </div>
-        </div>`
-
-    products_grid.innerHTML += cardProd;
-
+            <div class="row">
+            <a href="produto${i+1}.html"><img src="${prod.img}"></a>
+            <div class="product-text">
+                <h5>New</h5>
+            </div>
+            <div class="preco">
+                <h4>${prod.nomeProd}</h4>
+                <p>R$${prod.precoProd.toFixed(2).replace('.', ',')}</p>
+            </div>
+            </div>`
+            
+        products_grid.innerHTML += cardProd;
     }
 }
 
@@ -142,26 +169,29 @@ function totalCart(){
 
 // Destaques Index
 
-function prodIndex(){
-    for(let i = 0; i < 4; i++){
-        let prod = catalogo[i]
+// function prodIndex(){
+//     for(let i = 0; i < catalogo.length; i++){
+//         let prod = catalogo[i]
+//         if(prod.home == true){
 
-        let cardProd = `<div class="row">
-        <a href="produto${i+1}.html"><img
-                src="${prod.img}"
-                alt=""></a>
-        <div class="product-text">
-            <h5>New</h5>
-        </div>
-        <div class="preco">
-            <h4>${prod.nomeProd}</h4>
-            <p>${prod.precoProd.toFixed(2).replace(".", ",")}</p>
-        </div>
-    </div>`
+//             let cardProd = `<div class="row">
+//         <a href="produto${i+1}.html"><img
+//                 src="${prod.img}"
+//                 alt=""></a>
+//         <div class="product-text">
+//             <h5>New</h5>
+//         </div>
+//         <div class="preco">
+//             <h4>${prod.nomeProd}</h4>
+//             <p>${prod.precoProd.toFixed(2).replace(".", ",")}</p>
+//         </div>
+//     </div>`
 
-    indexProd.innerHTML += cardProd;
-    }
-}
+//     indexProd.innerHTML += cardProd;
+
+//         }
+//     }
+// }
 
 //remove carrinho
 
