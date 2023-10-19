@@ -102,7 +102,7 @@ function mostrarProducts(targetElement, home) {
     }
 }
 
-var n = 3;
+var n = 4;
 
 function productCart(){
     for(let i = 0; i < n; i++){
