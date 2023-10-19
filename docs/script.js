@@ -61,7 +61,7 @@ const catalogo = [{
     img4: "./images/Tenis/Air force 1 '07/Air force 1 07 (1).jpg",
     stock: 984,
     filter: "Air Force",
-    home: false
+    home: true
 },
 {
     id: 6,
@@ -74,47 +74,31 @@ const catalogo = [{
     img4: "./images/Tenis/Tn' 1 White and Black/Tn'1 White and Black (3).jpg",
     stock: 34,
     filter: "Air max plus Tn",
-    home: true
+    home: false
 }
 ]
 
 // Pagina de produtos
 
-function productsIndex(){
-    for(let i = 0; i < catalogo.length; i ++){
-        let prod = catalogo[i]
-        if(prod.home == true){
-            let cardProd = `
-            <div class="row">
-            <a href="produto${i+1}.html"><img src="${prod.img}"></a>
-            <div class="product-text">
-                <h5>New</h5>
-            </div>
-            <div class="preco">
-                <h4>${prod.nomeProd}</h4>
-                <p>R$${prod.precoProd.toFixed(2).replace('.', ',')}</p>
-            </div>
-            </div>`
-            indexProd.innerHTML += cardProd;
+function mostrarProducts(targetElement, home) {
+    for (let i = 0; i < catalogo.length; i++) {
+        let prod = catalogo[i];
+
+        if (home && !prod.home) {
+            continue;
         }
-    }
-}
-function productsPage(){
-    for(let d = 0; d < catalogo.length; d++){
-        let prod = catalogo[d]
         let cardProd = `
             <div class="row">
-            <a href="produto${i+1}.html"><img src="${prod.img}"></a>
-            <div class="product-text">
-                <h5>New</h5>
-            </div>
-            <div class="preco">
-                <h4>${prod.nomeProd}</h4>
-                <p>R$${prod.precoProd.toFixed(2).replace('.', ',')}</p>
-            </div>
-            </div>`
-            
-        products_grid.innerHTML += cardProd;
+                <a href="produto${i + 1}.html"><img src="${prod.img}"></a>
+                <div class="product-text">
+                    <h5>New</h5>
+                </div>
+                <div class="preco">
+                    <h4>${prod.nomeProd}</h4>
+                    <p>R$${prod.precoProd.toFixed(2).replace('.', ',')}</p>
+                </div>
+            </div>`;
+        targetElement.innerHTML += cardProd;
     }
 }
 
@@ -166,32 +150,6 @@ function totalCart(){
 
     right_bar.innerHTML += cart_total;
 }
-
-// Destaques Index
-
-// function prodIndex(){
-//     for(let i = 0; i < catalogo.length; i++){
-//         let prod = catalogo[i]
-//         if(prod.home == true){
-
-//             let cardProd = `<div class="row">
-//         <a href="produto${i+1}.html"><img
-//                 src="${prod.img}"
-//                 alt=""></a>
-//         <div class="product-text">
-//             <h5>New</h5>
-//         </div>
-//         <div class="preco">
-//             <h4>${prod.nomeProd}</h4>
-//             <p>${prod.precoProd.toFixed(2).replace(".", ",")}</p>
-//         </div>
-//     </div>`
-
-//     indexProd.innerHTML += cardProd;
-
-//         }
-//     }
-// }
 
 //remove carrinho
 
