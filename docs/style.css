@@ -95,6 +95,10 @@ color: #c3c3c3;
     cursor: pointer;
 }
 
+.sobre-nos{
+    color: #cfcfcf;
+}
+
 #search-box input{
     font-weight: 400;
     color: #cfcfcf;
@@ -777,4 +781,21 @@ section{
     .wraper{
         max-width: 95%;
     }    
+}
+
+/* Sobre nos */
+
+.sobrenosTXT{
+    font-weight: 200;
+    color: #f7f7f7;
+    margin-top: 10%;
+    font-weight: 200;
+    text-align:center;
+    font-size: 120%;
+    margin-bottom: 15%;
+}
+.sobrenosTXT h2{
+    color: #f7f7f7;
+    margin-bottom: 0.5%;
+    font-weight: 200;
 }
