@@ -1,4 +1,4 @@
-const catalogo = [{
+export const catalogo = [{
     id: 1,
     nomeProd: "Air max plus Tn' Black and White",
     descProd: "Leve sua atitude ao máximo no Nike Air Max Plus. uma experiência Air que oferece estabilidade e sustentação premium com um amortecimento inacreditável.",
@@ -80,29 +80,7 @@ const catalogo = [{
 
 // Pagina de produtos
 
-function mostrarProducts(targetElement, home) {
-    for (let i = 0; i < catalogo.length; i++) {
-        let prod = catalogo[i];
-
-        if (home && !prod.home) {
-            continue;
-        }
-        let cardProd = `
-            <div class="row">
-                <a href="produto${i + 1}.html"><img src="${prod.img}"></a>
-                <div class="product-text">
-                    <h5>New</h5>
-                </div>
-                <div class="preco">
-                    <h4>${prod.nomeProd}</h4>
-                    <p>R$${prod.precoProd.toFixed(2).replace('.', ',')}</p>
-                </div>
-            </div>`;
-        targetElement.innerHTML += cardProd;
-    }
-}
-
-var n = 4;
+var n = 6;
 
 function productCart(){
     for(let i = 0; i < n; i++){
