@@ -1,5 +1,5 @@
 import { mostrarProducts } from "./funcoes.js";
 
-const indexProd = document.querySelector("#indexProd")
+const indexProd = document.getElementById("indexProd")
 
 mostrarProducts(indexProd, true);
