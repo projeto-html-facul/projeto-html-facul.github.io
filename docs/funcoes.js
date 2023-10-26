@@ -78,4 +78,3 @@ export function totalCart(){
 }
 
 // Mostrar seleção de tamanhos - prodOnly.js
-

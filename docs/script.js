@@ -80,8 +80,4 @@ export const catalogo = [{
 
 // seleção de imagens principais
 
-export function showImg (pic){
-    let bigImg = document.querySelector('.big-img img');
-    bigImg.src = pic;
-  }
   

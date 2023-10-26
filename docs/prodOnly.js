@@ -1,3 +1,3 @@
-import { mostrarSelecao } from "./script.js";
+import { mostrarSelecao } from "./funcoes.js";
 
 mostrarSelecao();

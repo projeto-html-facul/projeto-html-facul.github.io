@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="prodOnly.js" defer></script>
+
 
     <!-- Linkando Fontes -->
 
@@ -69,7 +69,7 @@
                     <p>R$295,00</p>
                 </div>
                 <div class="tamanhos">
-                    <select id="tamanho"  onchange="mostrarSelecao()">
+                    <select id="tamanho">
                         <option value="35">35</option>
                         <option value="36">36</option>
                         <option value="37">37</option>
@@ -120,5 +120,11 @@
             </div>
         </div>
 </section>
+<script>
+    function showImg (pic){
+    let bigImg = document.querySelector('.big-img img');
+    bigImg.src = pic;
+  }
+</script>
 </body>
 </html>
