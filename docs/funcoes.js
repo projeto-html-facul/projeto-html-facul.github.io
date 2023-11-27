@@ -170,11 +170,9 @@ export function remover_cart(carrinho_compras) {
     delbtns.forEach(botao => botao.addEventListener('click', (event)=> {
 
         let item = event.target.parentElement.parentElement.parentElement
-
         console.log(item)
 
         let index = carrinho_compras.findIndex(produto => produto.id == item.id)
-
         console.log(index)
 
         carrinho_compras.splice(index, 1)
@@ -184,7 +182,6 @@ export function remover_cart(carrinho_compras) {
         localStorage.setItem('Cart', JSON.stringify(carrinho_compras))
 
         totalCart(carrinho_compras)
-
     }))
 }
 
@@ -210,28 +207,81 @@ export function totalCart(carrinho_compras) {
             <p><span>Descontos:</span> <span>R$0,00</span></p>
             <hr>
             <p><span>Total:</span><span>R$${total.toFixed(2).replace('.', ',')}</span></p>
-            <button class="btn_area">Finalizar Compra</button>
+            <button type="submit" class="btn_area">Finalizar Compra</button>
         </div>`;
 
     right_bar.innerHTML += cart_total;
 }
 
+
+
+// Mostrar produto filtrado
+
+// export function mostrarProdFIltrados(produtosFiltrados) {
+
+//     produtosFiltrados.forEach(prod => {
+//         const products_grid = document.getElementById("products_grid");
+
+//         let cardProd = `
+//             <div class="row" id="${prod.id}">
+//                 <a href="produtoUnic.html"><img src="${prod.img}" id="${prod.id}"></a>
+//                 <div class="product-text">
+//                     <h5>New</h5>
+//                 </div>
+//                 <div class="preco">
+//                     <h4>${prod.nomeProd}</h4>
+//                     <p>R$${prod.precoProd.toFixed(2).replace('.', ',')}</p>
+//                 </div>
+//             </div>`;
+
+//         products_grid.innerHTML += cardProd;
+//     });
+
+// };
+
+
 // Barra de Busca
 
-const searchIcon = document.querySelector('.searchIcon')
 
-searchIcon.addEventListener('click', (e) =>{
+export function searchBar(){
+
+    const searchIcon = document.querySelector('.searchIcon')
+
+    searchIcon.addEventListener('click', (e) =>{
 
     e.preventDefault();
 
     let searchTerm = document.querySelector('#search-box2').value;
-
     console.log(searchTerm);
 
-    let produtosFiltrados = catalogo.filter(produto => produto.nomeProd.toLowerCase().includes(searchTerm.toLowerCase()));
+    let produtosFiltrados = catalogo.filter((produto) => {
+        const produtoNomeLowerCase = produto.nomeProd.toLowerCase();
+        const searchTermLowerCase = searchTerm.toLowerCase();
+
+        return produtoNomeLowerCase.includes(searchTermLowerCase);
+    });
+
 
     document.querySelector('#search-box2').value = '';
 
     console.log(produtosFiltrados)
 
+    if (!isCurrentPage('produtos.html')) {
+
+        // Transforma os produtos filtrados em uma string JSON para ser passada como parâmetro na URL
+
+        let produtosFiltradosString = encodeURIComponent(JSON.stringify(produtosFiltrados));
+
+        // Chama a função para mostrar os produtos filtrados
+        // Redireciona para a nova página com a barra de consulta contendo os produtos filtrados
+
+        window.location.href = 'produtos.html?produtos=' + produtosFiltradosString;
+    }
 });
+}
+
+// Função para verificar se já está na página de destino
+
+function isCurrentPage(pageName) {
+    return window.location.href.indexOf(pageName) !== -1;
+}
